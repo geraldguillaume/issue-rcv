@@ -1,0 +1,4 @@
+usr/bin/issue-rcv
+etc/issue-rcv/issue-rcv.cfg
+lib/systemd/system/issue-rcv.service
+

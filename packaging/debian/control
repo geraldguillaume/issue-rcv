@@ -1,0 +1,56 @@
+#
+#    issue-rcv - Reproduce STREAM STREND and DELIVER hang issue
+#
+#    Copyright (C) 2014 - 2018 Eaton
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License along
+#    with this program; if not, write to the Free Software Foundation, Inc.,
+#    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+Source:         issue-rcv
+Section:        net
+Priority:       optional
+Maintainer:     issue-rcv Developers <eatonipcopensource@eaton.com>
+Standards-Version: 4.0.1.0
+Build-Depends: debhelper (>= 9),
+    pkg-config,
+    libsodium-dev,
+    libzmq3-dev,
+    libczmq-dev,
+    libmlm-dev,
+    liblog4cplus-dev,
+    libfty-common-logging-dev,
+    libfty-proto-dev,
+    systemd,
+    dh-systemd,
+    asciidoc-base | asciidoc, xmlto,
+    dh-autoreconf
+
+
+Package: issue-rcv
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends},
+Description: runnable binaries from issue-rcv
+ Main package for issue-rcv:
+ reproduce stream strend and deliver hang issue
+
+Package: issue-rcv-dbg
+Architecture: any
+Section: debug
+Priority: optional
+Depends:
+    issue-rcv (= ${binary:Version}),
+    ${misc:Depends}
+Description: issue-rcv debugging symbols
+ This package contains the debugging symbols for issue-rcv:
+ reproduce stream strend and deliver hang issue.
